@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Search from './Search';
+import { connect } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+const mapStateToProps = state => {
+  let search_text = state.search_text || null;
+  return {
+    search_text
+  };
 }
 
-export default App;
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Search search_text={this.props.search_text}/>
+        <span>{this.props.search_text}</span>
+      </div>
+    );
+  }
+}
+
+export default connect(mapStateToProps)(App);
