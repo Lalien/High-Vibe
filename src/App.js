@@ -13,14 +13,12 @@ const mapStateToProps = state => {
 class App extends React.Component {
   constructor(props) {
     super(props);
-    
   }
 
   render() {
     return (
       <div className="App">
-        <Search search_text={this.props.search_text}/>
-        <span>{this.props.search_text}</span>
+        <Search store={this.context}/>
       </div>
     );
   }
