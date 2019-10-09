@@ -5,7 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function mapStateToProps(state = {}, ownProps) {
     let newState = state;
@@ -21,6 +21,12 @@ function mapStateToProps(state = {}, ownProps) {
                     selected_strain: ownProps.id
                 });
             }
+        break;
+        case 'RESET_SELECTED_STRAIN':
+            return Object.assign({},state,{
+                selected_strain: null
+            });
+            
         break;
     }
     return state;

@@ -23,3 +23,19 @@ export const getSearchResults = async search_text => {
         }, 500);
     });
 }
+
+export const getStrainInformation = async strain_id => {
+    return new Promise((resolve) => {
+        clearTimeout(timer);
+        timer = setTimeout(async () => {
+            let flavors = await API.get('strains/data/flavors/' + strain_id);
+            let effects = await API.get('strains/data/flavors/' + strain_id);
+            let description = await API.get('strains/data/desc/'+ strain_id);
+            resolve({
+                flavors,
+                effects,
+                description
+            });
+        });
+    }); 
+}

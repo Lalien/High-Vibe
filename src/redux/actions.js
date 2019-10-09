@@ -11,3 +11,9 @@ export const selectStrain = id => {
         id
     }
 }
+
+export const resetSelectedStrain = () => {
+    return {
+        type: 'RESET_SELECTED_STRAIN'
+    }
+}
