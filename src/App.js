@@ -2,14 +2,6 @@ import React from 'react';
 import Search from './Search';
 import { connect } from 'react-redux';
 
-
-const mapStateToProps = state => {
-  let search_text = state.search_text || null;
-  return {
-    search_text
-  };
-}
-
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -18,10 +10,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <Search store={this.context}/>
+        <Search/>
       </div>
     );
   }
 }
 
-export default connect(mapStateToProps)(App);
+export default connect()(App);

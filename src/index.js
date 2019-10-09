@@ -9,10 +9,19 @@ import {createStore} from 'redux';
 
 function mapStateToProps(state = {}, ownProps) {
     let newState = state;
-    if (ownProps.type == 'UPDATE_TEXT') {
-        return Object.assign({},state,{
-            search_text: ownProps.text
-        });
+    switch(ownProps.type) {
+        case 'UPDATE_TEXT':
+            return Object.assign({},state,{
+                search_text: ownProps.text
+            });
+        break;
+        case 'SELECT_STRAIN':
+            if (state.selected_strain != ownProps.id) {
+                return Object.assign({},state,{
+                    selected_strain: ownProps.id
+                });
+            }
+        break;
     }
     return state;
 }
