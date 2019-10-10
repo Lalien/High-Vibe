@@ -16,32 +16,33 @@ class Search extends React.Component {
 
     render() {
         return (
-            <>
+            <div class="advance-search">
                 <Container>
-                    <Row>
+                    <Row style={{position:'relative'}}>
                         <label>Search Strain Database</label>
                         <input className="form-control"  name="search-text" onChange={this.updateSearch} value={this.props.search_text || ""}/>
-                        <div style={this.props.search_text.length ? {} : {display:'none'}}>
-                            <div>
+                        <br/>
+                        <div style={this.props.search_text.length ? {position:'absolute',bottom:0, width:'100%'} : {display:'none'}}>
+                            <ul style={{position: 'absolute',width: '100%','max-height':'300px','overflow-y':'scroll'}}>
                                 {this.state.results.map((result) =>
-                                    <div>
-                                        <a href="#" onClick={() => this.handleSelect(result.id)} style={ this.props.selected_strain == result.id ? {color: 'green'} : {}}>{result.name}</a>
-                                    </div>
+                                    <li style={{'text-align':'left','background-color':'white'}}>
+                                        <a href="#" onClick={() => this.handleSelect(result.id, result.name)} style={{width:'100%',display:'block',padding:'10px'}}>{result.name} - {result.race}</a>
+                                    </li>
                                 )}
                                 <div style={this.state.results.length ? {display:'none'} : {}}>
                                     No Strains Found.
                                 </div>
-                            </div>
+                            </ul>
                         </div>
                     </Row>
                 </Container>
                 <InformationModal/>
-            </>
+            </div>
         );
     }
 
-    handleSelect = id => {
-        this.props.selectStrain(id);
+    handleSelect = (id,name) => {
+        this.props.selectStrain(id,name);
     }
 
     async componentDidUpdate() {

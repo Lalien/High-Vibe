@@ -18,13 +18,15 @@ function mapStateToProps(state = {}, ownProps) {
         case 'SELECT_STRAIN':
             if (state.selected_strain != ownProps.id) {
                 return Object.assign({},state,{
-                    selected_strain: ownProps.id
+                    selected_strain: ownProps.id,
+                    selected_strain_name: ownProps.name
                 });
             }
         break;
         case 'RESET_SELECTED_STRAIN':
             return Object.assign({},state,{
-                selected_strain: null
+                selected_strain: null,
+                selected_strain_name: null
             });
             
         break;

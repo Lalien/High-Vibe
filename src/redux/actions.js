@@ -5,10 +5,11 @@ export const updateText = (text) => {
     };
 }
 
-export const selectStrain = id => {
+export const selectStrain = (id, name) => {
     return {
         type: 'SELECT_STRAIN',
-        id
+        id,
+        name
     }
 }
 

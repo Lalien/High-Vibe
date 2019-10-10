@@ -32,9 +32,9 @@ export const getStrainInformation = async strain_id => {
             let effects = await API.get('strains/data/flavors/' + strain_id);
             let description = await API.get('strains/data/desc/'+ strain_id);
             resolve({
-                flavors,
-                effects,
-                description
+                flavors: flavors.data,
+                effects: effects.data,
+                description: description.data.desc
             });
         });
     }); 
