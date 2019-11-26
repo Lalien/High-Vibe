@@ -42,6 +42,10 @@ p {
   color: #888;
 }
 
+ul a:hover{
+  color: white;
+}
+
 label {
   font-size: 14px;
   letter-spacing: 0;
@@ -123,7 +127,9 @@ label {
   background: transparent;
   color: #666;
 }
-
+ul{
+  background: rgb(0, 128, 79);
+}
 ul.pagination li {
   margin-right: 10px;
 }

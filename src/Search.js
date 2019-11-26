@@ -25,7 +25,7 @@ class Search extends React.Component {
                         <div style={this.props.search_text.length ? {position:'absolute',bottom:0, width:'100%'} : {display:'none'}}>
                             <ul style={{position: 'absolute',width: '100%','max-height':'300px','overflow-y':'scroll'}}>
                                 {this.state.results.map((result) =>
-                                    <li style={{'text-align':'left','background-color':'white'}}>
+                                    <li style={{'text-align':'left','background-color':'rgb(0, 128, 79)'}}>
                                         <a href="#" onClick={() => this.handleSelect(result.id, result.name)} style={{width:'100%',display:'block',padding:'10px'}}>{result.name} - {result.race}</a>
                                     </li>
                                 )}
