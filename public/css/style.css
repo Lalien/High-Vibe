@@ -123,9 +123,20 @@ label {
   background: transparent;
   color: #666;
 }
-
+ul{
+  background: rgb(0, 128, 79);
+}
 ul.pagination li {
   margin-right: 10px;
+}
+
+ul.search-result a:hover {
+  color: white;
+}
+
+li.search-results {
+  text-align : left;
+  background-color: rgb(0, 128, 79);
 }
 
 ul.pagination li a {
@@ -579,6 +590,7 @@ ul.pagination li a {
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1);
   color: #666;
 }
+
 
 ul.pagination li a:hover {
   background-color: #5672f9 !important;
