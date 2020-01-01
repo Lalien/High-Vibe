@@ -1,6 +1,7 @@
 import React from 'react';
 import Search from './Search';
 import { connect } from 'react-redux';
+import './styles.scss';
 
 class App extends React.Component {
   constructor(props) {
